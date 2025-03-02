@@ -10,3 +10,20 @@ def caesarCipher(s, k):
             new_char = char
         encrypted.append(new_char)
     return "".join(encrypted)
+
+test_cases = [
+    ("", 5, ""),                 
+    ("som", 3, "vrp"),           
+    ("songtis", 5, "xtslynx"),   
+    ("6710110289", 10, "6710110289"),  
+    ("LOve", 2, "NQxg"),         
+    ("Hello, World!", 7, "Olssv, Dvysk!"),  
+    ("Zebra-123!", 4, "Difve-123!") 
+]
+
+for i, (s, k, expected) in enumerate(test_cases, start=1):
+    output = caesarCipher(s, k)
+    print(f"Test Case {i}:")
+    print(f"Input: s = \"{s}\", k = {k}")
+    print(f"Output: \"{output}\"")
+    print()
