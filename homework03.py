@@ -12,18 +12,21 @@ def caesarCipher(s, k):
     return "".join(encrypted)
 
 test_cases = [
-    ("", 5, ""),                 
-    ("som", 3, "vrp"),           
-    ("songtis", 5, "xtslynx"),   
+    ("abc", 3, "def"),
+    ("xyz", 2, "zab"),  
+    ("ABC", 3, "DEF"),
+    ("Hello, World!", 5, "Mjqqt, Btwqi!"),  
+    ("LOve", 2, "NQxg"),  
+    ("som", 3, "vrp"),
+    ("songtis", 5, "xtslynx"),  
     ("6710110289", 10, "6710110289"),  
-    ("LOve", 2, "NQxg"),         
-    ("Hello, World!", 7, "Olssv, Dvysk!"),  
-    ("Zebra-123!", 4, "Difve-123!") 
+    ("a b c", 3, "d e f"),  
+    ("!@#$%^&*()", 4, "!@#$%^&*()"),  
 ]
 
 for i, (s, k, expected) in enumerate(test_cases, start=1):
     output = caesarCipher(s, k)
     print(f"Test Case {i}:")
     print(f"Input: s = \"{s}\", k = {k}")
-    print(f"Output: \"{output}\"")
-    print()
+    print(f"Output: \"{output}\" (Expected: \"{expected}\")")
+    print(f"✅ {'Pass' if output == expected else 'Fail'}\n")
